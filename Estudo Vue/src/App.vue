@@ -24,12 +24,13 @@ const blockLeave = () => {
 <template>
   <span v-bind="attributes">👋🏻</span>
   <h1>
-    Hi, my name is <a v-bind:href="'https://github.com/' + username" target="_blank">{{ name }}</a>
+    Hi, my name is 
+    <a v-on:click.prevent="blockLeave" :href="'https://github.com/' + username" target="_blank">{{ name }}</a>
   </h1>
   <a :href>
     <button :disabled>Click to visit my favourite website! If you can...</button>
   </a>
-  <h2>
+  <h2 v-on:[event]="coding_years++">
     {{
       coding_years > 1 ? `I have been coding for ${coding_years} years.` : "Im a newbie"
     }}
