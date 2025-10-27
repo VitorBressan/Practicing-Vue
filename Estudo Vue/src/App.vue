@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 //data
 const name = ref('Bressan');
@@ -19,14 +19,24 @@ const event = ref('dblclick');
 const blockLeave = () => {
   alert("You can't leave!");
 };
+
+const newItem = ref("");
+const characterCount = computed(()=>{
+  return newItem.value.length
+});
 </script>
 
 <template>
   <span v-bind="attributes">👋🏻</span>
   <h1>
     Hi, my name is 
-    <a v-on:click.prevent="blockLeave" :href="'https://github.com/' + username" target="_blank">{{ name }}</a>
+    <a v-on:click.prevent="blockLeave" :href="'https://github.com/' + username" target="_blank">{{ name }}</a>!
+    What is yours ?
   </h1>
+  <input v-model="newItem" placeholder="Your name here">
+  <p class="counter">
+    {{ characterCount }}/200
+  </p>
   <a :href>
     <button :disabled>Click to visit my favourite website! If you can...</button>
   </a>
