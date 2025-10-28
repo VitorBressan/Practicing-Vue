@@ -25,6 +25,15 @@ const userTypedName = ref("");
 const characterCount = computed(()=>{
   return userTypedName.value.length
 });
+
+const skillSet = ref([
+  "Python",
+  "VBA",
+  "SqlAlchemy",
+  "Flask",
+  "Git/GitHub",
+  "Excel"
+])
 </script>
 
 <template>
@@ -54,6 +63,18 @@ const characterCount = computed(()=>{
       coding_years > 1 ? `I have been coding for ${coding_years} years.` : "Im a newbie"
     }}
   </h2>
+
+  <h3> Skill Set: </h3>
+  <ul class="skill-list">
+    <li v-for="skill in skillSet"> {{ skill }}</li>
+  </ul>
   <h3>Today is {{ getFormattedDate(new Date())}}</h3>
 </template>
 
+<style>
+  .skill-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+  }
+</style>
