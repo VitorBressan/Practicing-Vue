@@ -21,9 +21,9 @@ const blockLeaveGithub = () => {
   alert("Follow me on github!");
 };
 
-const userTypedName = ref("");
+const userTypedSkill = ref("");
 const characterCount = computed(()=>{
-  return userTypedName.value.length
+  return userTypedSkill.value.length
 });
 
 const skillSet = ref([
@@ -43,13 +43,7 @@ const skillSet = ref([
   <h1>
     Hi, my name is 
     <a v-on:click="blockLeaveGithub" :href="'https://github.com/' + githubUsername" target="_blank">{{ name }}</a>!
-    What is yours ?
   </h1>
-  <input v-model="userTypedName" placeholder="Your name here">
-  <p class="counter">
-    {{ characterCount }}/200
-  </p>
-
 
   <a :href target="_blank">
     <button :disabled>Click to visit my favorite website! If you can...</button>
@@ -65,6 +59,14 @@ const skillSet = ref([
   </h2>
 
   <h3> Skill Set: </h3>
+  <input v-model="userTypedSkill" v-on:keyup.enter="skillSet.push(userTypedSkill)" placeholder="Type a skill here"> 
+  <button v-on:click="skillSet.push(userTypedSkill)">
+    Register
+  </button>
+  <p class="counter">
+    {{ characterCount }}/200
+  </p>
+  
   <ul class="skill-list">
     <li v-for="skill in skillSet"> {{ skill }}</li>
   </ul>
