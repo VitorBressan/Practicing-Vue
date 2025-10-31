@@ -10,10 +10,6 @@ const attributes = {
 const name = ref('Bressan');
 const href = ref('https://orteil.dashnet.org/cookieclicker/');
 const coding_years = ref(3);
-const getFormattedDate = (date) => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('en-UK', options);
-};
 
 const githubUsername = ref('VitorBressan');
 const event = ref('dblclick');
@@ -71,7 +67,7 @@ const skillSet = ref([
   <ul class="skill-list">
     <li v-for="skill in skillSet"> {{ skill }}</li>
   </ul>
-  <h3>Today is {{ getFormattedDate(new Date())}}</h3>
+  
 
 <Footer/>
 </template>
