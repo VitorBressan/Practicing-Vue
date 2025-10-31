@@ -1,4 +1,5 @@
 <script setup>
+import Footer from './components/Footer.vue';
 import { ref, computed } from 'vue';
 
 const attributes = {
@@ -71,6 +72,8 @@ const skillSet = ref([
     <li v-for="skill in skillSet"> {{ skill }}</li>
   </ul>
   <h3>Today is {{ getFormattedDate(new Date())}}</h3>
+
+<Footer/>
 </template>
 
 <style>
