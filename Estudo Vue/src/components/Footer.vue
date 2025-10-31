@@ -18,7 +18,7 @@ footer {
   background:#D17862;
   color:white;
   text-align:center;
-  padding:10px;
+  padding:5px;
   margin-top:auto;
 }
 /* ----------------- */
