@@ -36,22 +36,10 @@ const skillSet = ref([
 
 
 <template>
-  <!--
-CHALLENGE: Create and use a Header.vue
-           component using the provided HTML and CSS
-STEP 1: Create a Header.vue file in /components
-STEP 2: Structure the file with <script setup>,
-        <template>, and <style scoped>
-STEP 3: Cut the entire <header> element and it's contents
-        and put in the template section of Header.vue
-STEP 4: Cut all the Header related styles and
-        put in the styles section of Header.vue
-STEP 5: Import the Header component into App.vue
-STEP 6: Use the Header component in place of <header>
--->
+
 <Header/>
 
-<span v-bind="attributes">👋🏻</span>
+<span :="attributes">👋🏻</span>
   <h1>
     Hi, my name is 
     <a v-on:click="blockLeaveGithub" :href="'https://github.com/' + githubUsername" target="_blank">{{ name }}</a>!
@@ -81,7 +69,7 @@ STEP 6: Use the Header component in place of <header>
   </ul>
     
 
-<Footer/>
+<Footer :name="githubUsername"/>
 </template>
 
 <style>
