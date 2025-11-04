@@ -1,5 +1,5 @@
 <script setup>
-  defineProps(["name"])
+  defineProps(["name", "clientName"])
   const getFormattedDate = (date) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('en-UK', options);
@@ -9,7 +9,7 @@
 
 <template>
 <footer>
-  <p>Today is {{ getFormattedDate(new Date())}}</p>
+  <p>{{clientName}} today is {{getFormattedDate(new Date())}}</p>
   <p>Website made by {{name}}</p>
 </footer>
 </template>

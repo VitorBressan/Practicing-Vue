@@ -3,6 +3,7 @@ import Footer from './components/Footer.vue';
 import Header from "./components/Header.vue"
 import { ref, computed } from 'vue';
 
+const clientName = ref("Pedro")
 const attributes = {
   id: 'big_emoji',
   class: 'waving',
@@ -37,11 +38,11 @@ const skillSet = ref([
 
 <template>
 
-<Header/>
+<Header v-model:clientName="clientName"/>
 
 <span :="attributes">👋🏻</span>
   <h1>
-    Hi, my name is 
+    Hi {{ clientName }}, my name is 
     <a v-on:click="blockLeaveGithub" :href="'https://github.com/' + githubUsername" target="_blank">{{ name }}</a>!
   </h1>
   <a :href target="_blank">
@@ -69,7 +70,7 @@ const skillSet = ref([
   </ul>
     
 
-<Footer :name="githubUsername"/>
+<Footer :name="githubUsername" :clientName="clientName"/>
 </template>
 
 <style>

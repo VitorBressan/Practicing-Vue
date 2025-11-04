@@ -1,10 +1,11 @@
 <script setup>
-const title = 'Minha Aplicação'
+const clientName = defineModel("clientName");
 </script>
 
 <template>
   <header class="header">
-    <p>Vue Practice Playground</p>
+    <p>Whats your name?</p>
+    <input v-model="clientName" placeholder="Type your name here"/>
   </header>
 </template>
 
